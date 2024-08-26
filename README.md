@@ -560,9 +560,16 @@ But don't forget to do coding problems from above while you learn!
 - There are a lot of videos here. Just watch enough until you understand it. You can always come back and review.
 - Don't worry if you don't understand all the math behind it.
 - You just need to understand how to express the complexity of an algorithm in terms of Big-O.
-- [ ] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
-- [ ] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
-- [ ] [Big O Notation (and Omega and Theta) - best mathematical explanation (video)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
+- [x] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
+	- Asymptotic Notations is to calculate the run time of your aglo grows in respect to how many variables are passed
+	- a linear count algo will typically be O(n)
+	- getting a constant algo like getting the predefined value is a constant no matter how big the value is. this is Big O(1)
+	- Big 0(n^2) can be quicker on smaller datasets but the closer it gets to infinity the longer it takes. think of it as a quadratic. although linear has a head start it will eventually over take the linear algo. 
+	- Big O(logN) is what you see in binary search. increasing the array by 100% does not always mean a double in run time. 
+	- If you have a chance to get the algo to work as constant then it considered omega(n) and in the case of linear it is Omega(1)
+	- theta is use to define a algo thats best time is equivalent to its worse case
+- [x] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
+- [x] [Big O Notation (and Omega and Theta) - best mathematical explanation (video)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
 - [ ] [Skiena (video)](https://www.youtube.com/watch?v=z1mkCe3kVUA)
 - [ ] [UC Berkeley Big O (video)](https://archive.org/details/ucberkeley_webcast_VIS4YDpuP98)
 - [ ] [Amortized Analysis (video)](https://www.youtube.com/watch?v=B3SpQZaAZP4&index=10&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
@@ -593,6 +600,51 @@ if you can identify the runtime complexity of different algorithms. It's a super
 	        - A jagged array is a multi dimensional array that does not have to have an equal amount of nested array sizes. 
     - [ ] Implement a vector (mutable array with automatic resizing):
         - [ ] Practice coding using arrays and pointers, and pointer math to jump to an index instead of using indexing.
+	        ```go
+				package main
+				
+				import (
+					"fmt"
+				)
+				
+				func main() {
+					// Define an array
+					arr := [5]int{10, 20, 30, 40, 50}
+				
+					// Create a pointer to the first element
+					ptr := &arr[0]
+				
+					// Access the first element using the pointer
+					fmt.Println("First element:", *ptr)
+				
+					// Access the third element using pointer arithmetic
+					ptr = &arr[2]
+					fmt.Println("Third element:", *ptr)
+				
+					// Move the pointer to the next element
+					ptr = &arr[1]
+					fmt.Println("Second element:", *ptr)
+				}
+
+			```
+			```go
+			package main
+			import (
+				"fmt"
+			)
+			fun main() {
+				arr := [5]int(1, 2, 3, 4, 5)
+				n := len(arr)
+				ptr := &arr[0]
+				for i := 0; i <=n; i++ {
+					fmt.Printf("Element at position %d: %d\n", i, *ptr)
+					ptr = &arr[i+1]
+				}
+			}
+			```
+			```go
+			
+			```
         - [ ] New raw data array with allocated memory
             - can allocate int array under the hood, just not use its features
             - start with 16, or if the starting number is greater, use power of 2 - 16, 32, 64, 128
