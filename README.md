@@ -599,7 +599,7 @@ if you can identify the runtime complexity of different algorithms. It's a super
         - [Jagged Arrays (video)](https://www.youtube.com/watch?v=1jtrQqYpt7g)
 	        - A jagged array is a multi dimensional array that does not have to have an equal amount of nested array sizes. 
     - [ ] Implement a vector (mutable array with automatic resizing):
-        - [ ] Practice coding using arrays and pointers, and pointer math to jump to an index instead of using indexing.
+        - [x] Practice coding using arrays and pointers, and pointer math to jump to an index instead of using indexing.
 	        ```go
 				package main
 				
@@ -642,12 +642,23 @@ if you can identify the runtime complexity of different algorithms. It's a super
 				}
 			}
 			```
-			```go
-			
-			```
-        - [ ] New raw data array with allocated memory
+			- Pointer arithmetic refers to referring to the exact memory address and navigating by adding or subtracting to that address. For example with arrays having * address++ could navigate to the next index in the array. 
+			```C
+			#include <stdio.h
+			int main() {
+				int arr[5] = {10,20,30,40,50}
+				int *p = arr;
+				printf("Pointer p points to: %d\n", *p);
+				p++;
+				printf("After increment, p points to: %d/n", *p)
+				
+			}
+		   ```
+
+        - [x] New raw data array with allocated memory
             - can allocate int array under the hood, just not use its features
             - start with 16, or if the starting number is greater, use power of 2 - 16, 32, 64, 128
+	            - allocating arrays in powers of two allow for better memory allocation and also allows for better efficiency in the growth of an array.
         - [ ] size() - number of items
         - [ ] capacity() - number of items it can hold
         - [ ] is_empty()
